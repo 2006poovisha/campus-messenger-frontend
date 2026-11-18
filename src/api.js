@@ -2,10 +2,11 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000",
+  baseURL:
+    import.meta.env.VITE_API_URL ||
+    "https://campus-messenger-backend.onrender.com",
 });
 
-// Automatically attach login token to API requests
 API.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
 
